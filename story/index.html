@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <title>Story</title>
+</head>
+<body>
+    <div
+    id="App"
+    style="font-family: monospace;"
+    >
+        <form @submit.prevent="input" id="inputForm">
+            <input 
+                type="text" 
+                placeholder="Resto Name"
+                v-model="restoInput"
+            > <br>
+            <input 
+                type="text" 
+                placeholder="Cashier Name"
+                v-model="cashierInput"
+            > <br>
+            <input 
+                type="text" 
+                placeholder="Item"
+                v-model="itemInput"
+            > <br>
+            <input 
+                type="number" 
+                placeholder="Price"
+                v-model="priceInput"
+            > 
+            <!-- <button @click.prevent="addItem">Add item</button> -->
+            <br>
+            <button type="sumbit">checkout</button>
+        </form>
+        <div class="result">
+        </div>
+        <div 
+        id="result"
+        v-if="checkout"
+        style="font-family: monospace; justify-content: space-between;"
+         >
+            <p>{{restoInput}}</p>
+            <p>Tanggal: {{date}}</p>
+            <p>Nama Kasir: {{cashierInput}}</p>
+            <p>=============================</p>
+            <p>{{itemInput}}{{dot}}Rp.{{priceInput}}</p>
+            <p>Total {{dot}}Rp.{{resultReciepe}}</p>
+        </div>
+    </div>
+    
+</body>
+<script src="./app.js"></script>
+<script src="./style.css"></script>
+</html>
